@@ -1,1 +1,12 @@
+// CSS Reset, comment out if not required or using a different module
+@import '~minireset.css/minireset';
 /* You can add global styles to this file, and also import other style files */
+
+/*bootstrap ın css dosyalarını ekliyoruz */
+@import "../node_modules/bootstrap/dist/css/bootstrap-reboot.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+@import "./assets/styles/toastr"; /* _toastr.scss eklendi*/
+
+@import "./assets/styles/variables.scss";  /*variables.scss eklendi*/
+@import "./assets/styles/igx-theme"; /*igx-theme.scss eklendi*/

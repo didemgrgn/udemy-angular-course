@@ -1,0 +1,21 @@
+#toast-container > div { //toast id
+    opacity: 1;  //saydamlığı 1 
+    width: 600px; //uzunluğu 600
+}
+.toast {
+    font-size:initial !important;
+    border: initial !important;
+    backdrop-filter: blur(0) !important;
+}
+.toast-success{
+    background-color: rgb(122, 192, 52) !important;
+}
+.toast-error{
+    background-color: rgb(204, 54, 54) !important;
+}
+.toast-info {
+    background-color: rgb(65, 153, 225) !important;
+}
+.toast-warning {
+    background-color: rgb(191, 66, 248) !important;
+}
