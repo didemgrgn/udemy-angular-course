@@ -8,11 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr'; //toastr import edildi
 import { NgxSpinnerModule } from "ngx-spinner"; //Spinner import edildi
-import { IgxButtonModule } from 'igniteui-angular';//ignite button modülü import edildi.
+//import { IgxButtonModule } from 'igniteui-angular';
+//import { HomeComponent } from './home/home.component';
+//import { UserComponent } from './user/user.component';
+import { RoleComponent } from './role/role.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+//import { UserDetailComponent } from './user/user-detail/user-detail.component';//ignite button modülü import edildi.
+import { IgxNavbarModule } from 'igniteui-angular'; 
+import { IgxIconModule , IgxNavigationDrawerModule} from 'igniteui-angular';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    //HomeComponent,
+    //UserComponent,
+    RoleComponent,
+    NavbarComponent,
+    SidebarComponent,
+    //UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +43,10 @@ import { IgxButtonModule } from 'igniteui-angular';//ignite button modülü impo
       positionClass: "toast-bottom-left"
     }), // ToastrModule added
     NgxSpinnerModule, //ngx-spinner import edildi
-    IgxButtonModule //ignite button modülü import edildi.
+    //IgxButtonModule //ignite button modülü import edildi. //IgxButton burada tanımlanırsa sadece yukarıdaki declarations larda kullanılabilir
+    IgxNavbarModule, //navbarı her yerde kullanacağımız için app.module e import edildi
+    IgxIconModule,
+    IgxNavigationDrawerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

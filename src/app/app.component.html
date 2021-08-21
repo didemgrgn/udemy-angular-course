@@ -1,29 +1,67 @@
 
-
-
-<div class="row">  <!--div.row , row:bootstrap satırı olacağını belirtir-->
-  <div class="col-md-4"> <!--div.col-1-->
-    col-1
+<!--<div class="row">  //div.row , row:bootstrap satırı olacağını belirtir
+  <div class="col-md-3"> //div.col-1
+    <h2 routerLink="home">go to Home</h2>  //Go To Home a tıkladığında home sayfasına gidecek
   </div>
-  <div class="col-md-4"> <!--col-md-4: bootstrap 12 ye bölüyor, 4 4 4 ayrıldı-->
-    <button igxButton="flat">Kaydet</button>
+  <div class="col-md-3"> //col-md-4: bootstrap 12 ye bölüyor, 4 4 4 ayrıldı
+    <h2 routerLink="role">go to Role</h2>
   </div>
-  <div class="col-md-4">
-    col-3
+  <div class="col-md-3">
+    <h2 routerLink="user">go to User</h2>
+  </div>
+  <div class="col-md-3">
+    <h2 [routerLink]="['user',5]">go to 5 detail</h2> //user detail a gidebilmek için parametre verilmesi lazım [routerLink] , 7 id değeri
+  </div>
+</div> -->
 
-     <!--spinner tag i eklendi-->
-<ngx-spinner
-bdColor="rgba(51,51,51,0.8)"
-size="medium"
-color="#fff"
-type = "pacman"
-[fullScreen]="true"
->
-<p style="font-size: 20px; color: white">Loading...</p>
-</ngx-spinner>
+<app-navbar></app-navbar> <!--hangi route a giderse görünecek-->
+
+<div class="row">
+  <div class="col-md-3">
+    <app-sidebar></app-sidebar>
+   <!-- <ul>
+       <li routerLink="home">
+          Home
+       </li>
+       <li routerLink="role">
+          Role
+       </li>
+       <li routerLink="user">
+          User
+      </li>
+      <ul>
+        <li [routerLink]="['user',5]">
+          User 5 Detail
+        </li>
+        <li [routerLink]="['user',5,'role']">
+          User 5 Role
+        </li>
+      </ul>
+     </ul>-->
+  </div>
+  <div class="col-md-9">
+   <!--1.yöntem:--> <router-outlet></router-outlet><!--Bulunduğum url bir route a gidecekse ordaki route yansıtacak alandır -->
+<!--Üzerine tıklanarak çağırılan componentin template i router outlet tag ine geliyor.-->
+<!--Veya router a gerek kalmadan home.component.ts deki selector olan app-home ile çağrılabilir-->
+<!--2.yöntem:<app-home></app-home> ancak tek tek çağırmak doğru olmayacağı için router kullanılır.-->
 
   </div>
 </div>
 
+
+
+
+     <!--spinner tag i eklendi-->
+     <ngx-spinner
+     bdColor="rgba(51,51,51,0.8)"
+     size="medium"
+     color="#fff"
+     type = "pacman"
+     [fullScreen]="true"
+     >
+     <p style="font-size: 20px; color: white">Loading...</p>
+     </ngx-spinner>
+
+     
  
 
