@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; //CUSTOM_ELEMENTS_SCHEMA: Haberdar olmadığı şeyleri çalıştırmak için yazıldı
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; //CUSTOM_ELEMENTS_SCHEMA: Haberdar olmadığı şeyleri çalıştırmak için yazıldı
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,8 +15,7 @@ import { RoleComponent } from './role/role.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 //import { UserDetailComponent } from './user/user-detail/user-detail.component';//ignite button modülü import edildi.
-import { IgxNavbarModule } from 'igniteui-angular'; 
-import { IgxIconModule , IgxNavigationDrawerModule} from 'igniteui-angular';
+import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
 
 @NgModule({
   declarations: [
@@ -32,24 +31,25 @@ import { IgxIconModule , IgxNavigationDrawerModule} from 'igniteui-angular';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({ //app modelülün altında tüm rootlarda toastr modülünün çalışacağını belirtir
-      timeOut:4000, //4 saniye çalışıcak
-      progressBar:true,
-      easing:"ease-in",
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      progressBar: true,
+      easing: "ease-in",
       closeButton: false,
       progressAnimation: "decreasing",
       preventDuplicates: true,
       positionClass: "toast-bottom-left"
-    }), // ToastrModule added
-    NgxSpinnerModule, //ngx-spinner import edildi
+    }),
+    NgxSpinnerModule,
     //IgxButtonModule //ignite button modülü import edildi. //IgxButton burada tanımlanırsa sadece yukarıdaki declarations larda kullanılabilir
-    IgxNavbarModule, //navbarı her yerde kullanacağımız için app.module e import edildi
+    IgxNavbarModule,
     IgxIconModule,
     IgxNavigationDrawerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]//ngx-spinner import edildi
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] //ngx-spinner import edildi
 })
-export class AppModule { }
+export class AppModule {
+}

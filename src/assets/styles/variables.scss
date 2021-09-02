@@ -1,6 +1,12 @@
+
 //Değişken dosyası oluşturduk
 //igx-palette örneği
 
-$text_color: rgb(199, 50, 245);
-$primary_color: rgb(221,121,7); //bu değişkenleri yazarak tüm projelere tek tek renk vermek yerine bunları kullanarak renk verebiliriz.
+$text_color:  rgb(233, 214, 245); 
+$primary_color: rgb(104, 219, 10); //bu değişkenleri yazarak tüm projelere tek tek renk vermek yerine bunları kullanarak renk verebiliriz.
 $secondary_color: rgb(217, 163, 248); 
+
+//Sadece navbar için kullanacağımız değişken tanımlıyoruz
+$navbar_background_color:rgb(188, 122, 243);
+
+
