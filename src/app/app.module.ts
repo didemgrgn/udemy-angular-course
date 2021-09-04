@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 //import { UserDetailComponent } from './user/user-detail/user-detail.component';//ignite button modülü import edildi.
 import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
+//import { DataBindingComponent } from './data-binding/data-binding.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'ignit
     RoleComponent,
     NavbarComponent,
     SidebarComponent,
+    //DataBindingComponent,
     //UserDetailComponent
   ],
   imports: [

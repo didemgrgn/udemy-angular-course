@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren:()=> import('./user/user.module').then(m=>m.UserModule)
   },
   
+  {
+    path:"data-binding",
+    loadChildren:()=>import('./data-binding/data-binding.module').then(m=>m.DataBindingModule) //m.DataBindingModule - export ettiğim class ı çağırıyorum
+  },
   //{
      //sayfalar arasında geçiş yaparken user/:id gönderildiğinde buradaki id yi parametre olarak alabilmek için 
      //user-detail daki user-detail.component.ts ye gidilir.
