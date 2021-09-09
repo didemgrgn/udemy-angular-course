@@ -1,0 +1,34 @@
+<div style="margin:2rem">
+    <div class="row">
+        <div class="col-md-5">
+         <input type="text" [(ngModel)]="name" />
+         <br/>
+         <!--event binding ile metotları call edeceğiz (LocalStorageComponent.ts alanındaki metotlar)-->
+         <br/>
+         <button (click)="setItem(name);">set Item</button> <!--name de şuan değer olmadığı için componentteki değeri gönderecek-->
+         <button (click)="getItem();">get Item</button>
+         <button (click)="clearItem();">clear name Item</button>
+         <br/>
+         <br/>
+        <p>ng model: {{name}}</p> <!--ne yazarsam burada görünsün-->
+        <p>local Storage value: {{localStorageVal}}</p> <!--Sadece string, get edilen değeri interpolation la gösteriyoruz-->
+        </div>
+
+        <!--object verileri getirme-->
+        <div class="col-md-6">
+            name: <input type="text" [(ngModel)]="objName"> <br>
+            surname: <input type="text" [(ngModel)]="objSurname"> <br>
+            age: <input type="text" [(ngModel)]="objAge"> <br><br>
+            <button (click)="setObject();">Set Object</button> <br><br>
+            <button (click)="getObject();">Get Object</button> <br><br>
+            <p>Object Value: {{localStorageObjVal}}</p>
+        </div>
+    </div>
+
+    <!--Cookie ye geçilecek alan-->
+    <div class="col-md-2">
+         <button [routerLink]="['../cookie']">Go To Cookie Page</button>
+    </div>
+</div>
+
+

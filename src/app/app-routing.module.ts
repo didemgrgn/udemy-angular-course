@@ -32,8 +32,14 @@ const routes: Routes = [
   //},
   //Kullanıcı bunlardan hiç birine uygun olmayan url girerse
   {
+  path:"storage", //Storage olarak gelirse
+  loadChildren:()=>import('./storage/storage.module').then(m=>m.StorageModule) //storage modül classını import edece
+  },
+
+  {
     path:"**",
     component:HomeComponent //yanlışta girse home a gidecek.
+    //veya   -  loadChildren:()=>import("./home/home.module").then(m=>m.HomeModule)
   }
 ];
 

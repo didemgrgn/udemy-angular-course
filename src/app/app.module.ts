@@ -18,6 +18,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
 //import { DataBindingComponent } from './data-binding/data-binding.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'ignit
     IgxIconModule,
     IgxNavigationDrawerModule
   ],
-  providers: [],
+  providers: [CookieService], //Servis olarak yapıldığı modül olarak yapılmadığı için provider olarak eklendi
+  //Cookie servisi provide edildi , her yerden erişilebilir durumda
+  
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] //ngx-spinner import edildi
 })
