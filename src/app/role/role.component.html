@@ -1,1 +1,28 @@
-<p>role works!</p>
+<div class="row">
+    <div class="col-md-9 offset-md-3">
+        <form #roleForm="ngForm" class="form-group" (ngSubmit)="addNewRole(roleForm)">
+
+            <label for="id">id</label><br>
+            <input class="form-control" type="text" name="id" ngModel/><br>
+
+            <!--ngSubmit: addnewrole e gidecek ve roleformu gönderecek servise gidip isteği gerçekleştirecek-->
+            <label for="name">name</label><br>
+            <input class="form-control" type="text" name="name"  ngModel/><br><br>
+            <!--ngModel: formu tetiklesin-->
+
+            <button type="submit">Kaydet</button><br><br>
+            
+        </form>
+        <button (click)="editRole(roleForm)">Düzenle</button> <br>
+            <!--editNewRole e gidecek oraya da roleform u gönderecek-->
+        <button (click)="deleteRole(roleForm)">Sil</button>
+    </div>
+</div>
+
+<ul>
+    <li *ngFor="let role of rolesData[0]?.data">
+        <!--rolesData[0]?.data => 0.indexinde veri varsa onun içindeki datayı döngüye sok-->
+        id: {{role._id}} - name: {{role.name}}
+
+    </li>
+</ul>

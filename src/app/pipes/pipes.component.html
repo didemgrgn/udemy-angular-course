@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-2">
+        <h3>lowercase</h3><!--tüm yazıları küçük harfe çevirir.-->
+        <p>normal: {{title}}</p>
+        <p>lowercase:{{ title | lowercase }}</p> 
+    </div>
+
+    <div class="col-md-2">
+        <h3>titlecase</h3><!--Boşluklardan sonraki ilk harfi ayırır ve  harfi büyük yapar.-->
+        <p>titlecase:{{ title | titlecase }}</p>
+    </div>
+
+    <div class="col-md-2">
+        <h4>uppercase</h4><!--Tüm yazıları büyük harfe çevirir-->
+        <p>uppercase: {{ title  | uppercase }}</p>
+        <p>turkish uppercase: {{ turkishUpperCaseVal }}</p> <!--Türkçe karakterlerin gelmesi için yapılması gereken transform-->
+    </div>
+
+    <div class="col-md-4">
+        <h3>Date pipe</h3> <!--Tarih formatına çevirir-->
+         <p>normal date: {{today | date}}</p>
+        <!--<p>normal date: {{today | date : "dd/MMMM/yy"}}</p>-->
+        <p>pipe date: {{today | date :"fullDate"}}</p>
+        <p>turkish pipe longDate: {{today | date :"longDate":"":"tr-TR"}}</p> <!--Türkçe gelmesi için app.module.ts ye import işlemi yapıldı-->
+    </div>
+
+    <div class="col-md-2">
+        <h3>Currency pipe</h3><!-- girilen sayının para birimi şeklinde yazılmasını sağlar-->
+        <p>normal value: {{cashValue}}</p>
+        <p>currency pipe value: {{ cashValue | currency : "EUR" }}</p>
+        <p>turkish pipe value: {{ cashValue | currency : "TRY":"symbol":"1.2-2":"tr-TR" }}</p> <!--virgülden sonra kaç hane gelmesi : 1.2-2-->
+    </div>
+
+    <div class="col-md-3">
+        <h3>Json pipe</h3><!--json formatına çevirir-->
+        <p>Without Pipe</p>
+        <pre>{{objectVal}}</pre>
+
+        <p>With Pipe</p>
+        <pre>{{objectVal | json}}</pre> <!--bütün value yu json formatına dönüştürüyor ve html de gösteriyor, örn:swagger vb. teknolojiler de de json kullanılır.-->
+    </div>
+
+    <div class="col-md-2">
+        <h3>Percent Pipe</h3> <!--Yüzde pipe ı-->
+        <p>{{percentVal | percent}}</p>
+        <p>{{percentVal | percent:"":"tr-TR"}}</p><!--Internationalization bir önceki işlemlerde app module e eklendiği için tekrar eklenmiyor-->
+        <!--2.yöntem => <p>%{{percentVal}}</p>-->
+    </div>
+
+    <div class="col-md-2">
+        <h3>Slice Pipe</h3><!--Belirtilen indexdeki değerleri alma-->
+        <p>normal hali: {{cityName}}</p>
+        <p>slice pipe hali: {{cityName | slice:0:3}}</p>
+        <p>slice pipe hali: {{cityName | slice:-2}}</p>
+        <p>slice pipe hali: {{cityName | slice:3}}</p><!--3.indexe kadar gidip 3 ten sonrasını alır.-->
+        <p>slice pipe hali: {{cityName | slice:-4:-2}}</p>
+        <!--bir variable için birden fazla pipe ile  işlem yapılması -->
+        <p>slice & uppercase pipe hali: {{cityName | uppercase | slice:0:3}}</p>
+    </div>
+
+    <!--Kendimize özel transform işlemi yapan pipe oluşturulması-->
+    <!--TL için libs altına custom-pipes açıldı buraya ng g pipe tl --skip-import işlemi yapıldı-->
+    <!--pipes.module.ts içerisinde TlPipe declare edildi-->
+    <div class="col-md-2">
+        <h3>Custom Pipes</h3>
+        <p>{{cash | tl}}</p> <!--tl.pipe alanında  name alanında tl yazığı için burayada tl yazıldı, buradaki cash  aldığım value değeridir-->
+    </div>
+
+
+    <!--Custom pipe part2(custom filtering pipe)
+    ngFor döngüsündeki değerleri trasform edebilen bir pipe yapılması-->
+    <div class="col-md-2">
+        <h3>Custom Pipe Part-2</h3>
+        <br/>
+        <h4>Cities</h4>
+        <ul>
+            <li *ngFor="let city of cities | myFiltering :'a'">{{city}}</li><!--içerisinde sadece a harfi içerenler gözüksün-->
+        </ul>
+    </div>
+</div>

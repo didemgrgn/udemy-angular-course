@@ -1,0 +1,16 @@
+<!--<p>Child 1 Component</p>
+Gelen Name Sonuç: {{nameVal}} 
+<br/>
+Gelen Data Sonuç: {{data | json}} -->
+
+<!--düzgün gelmesi için-->
+<div *ngIf="data"> <!--data varsa çalışsın-->
+    {{data?.name}} kişisi <!--data?.name => data varsa name ini al demektir.-->
+<p *ngIf="data?.status"> Başarılıdır. </p>  <!--*ngIf="data?.status" => datanın statüsü true ise-->
+<p *ngIf="!data?.status"> Başarısızdır. </p>
+</div>
+<!--Burada yapılan her değişiklik parent1.component html e yansıyacaktır-->
+
+
+<!--<button (click)="emitForm($event)">RESET!</button>--><!--1.yöntem--><br/>
+<button style="background-color: rgb(92, 236, 188); color: slateblue;  margin-left: 1px;" (click)="resetForm.emit(data.name)">RESET!</button><!--2.yöntem-->

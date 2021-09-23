@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+    <h2>Angular Directives</h2>
+</div>
+
+<h3>Structual Directives</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>*ngIf</h4>
+        
+        <!--ngIf: sadece boolean değerlerde değil anlık olarak two way binding de de ngIf directive tetiklenebilir -->
+        <input type="text" [(ngModel)]="name">
+
+        <!--ngIf : componentimdeki title a bakıyor,bu elementin dom üzerinde olup olmamasına karar veriyor-->
+        <p *ngIf="title">Title var..</p> <!--DOM um paragraf elementini tanıyor-->
+
+        <p *ngIf="name == 'Didem'">isim Didem</p>
+
+        <!--Belirli bir bilgiye göre aktif ya da pasif yani DOM da yok veya var etme işlemi-->
+        <button (click)="changeTitle();">toggle</button>
+        <br>
+
+        <!--ngIf lerde template leri değiştirebiliyoruz-->
+        <div *ngIf="title; then titleExist; else titleNotExist;"> </div><!--eğer title varsa ve yoksa-->
+        <!--angular bir blok çalıştırıyor hangi tag li template in var olması gerektiğine karar veriyor-->     
+        <ng-template #titleExist>Title var template</ng-template> <!--oluşturulan custom template leride ngIf directory ile kontrol ve manufule edilebiliyor -->
+        <ng-template #titleNotExist>Title yok template</ng-template>
+    </div>
+
+
+    <div class="col-md-4">
+        <h4>*ngSwitch</h4>
+
+        <input type="text" [(ngModel)]="username">
+        <!--Hepsi gözükmesin sadece biri gözüksün istenirse-->
+        <ul [ngSwitch]="username">
+            <li *ngSwitchCase="'Didem'">Hello Didem</li> <!--Username Didem se burası çalışsın-->
+            <li *ngSwitchCase="'Kerem'">Hello Kerem</li>
+            <li *ngSwitchDefault>Hello Everyone</li>
+        </ul>
+    </div>
+
+
+    <div class="col-md-4">
+        <h4>*ngFor</h4>
+        <ul>
+            <!--directives.component.ts de oluşturduğum cities array ini döngü olarak göstermek istersek-->
+            <li *ngFor="let city of cities;let i=index"><!--let i=index => index i tutar,let city of cities => döngüde neyi dönmek istediğimi tutar-->
+                index: {{i}}<!--indexi-->
+                id: {{city.id}}
+                name: {{city.name}} 
+                region: {{city.region}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<h3>Attrabute Directives</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>[ngClass]</h4>
+         <!--ngClass : elemenlerin classlarını değişkenlere göre değiştirebilmeye ,yönlendirmeye,manufule etmeye yarar-->
+        <!--rengini value ya göre değiştireceğiz-->
+        <input type="text" [(ngModel)]="color" />
+        <p [ngClass]="color ==='red' ? 'red' : 'blue'">Renk</p><!--directives.component.scss e .red eklendi-->
+       
+        <!--color ın kırmızı olmasını istenirse red classına, mavi olması istenirse blue classına atması sağlandı-->
+        <p [ngClass]="{
+             red:color ==='red', 
+             blue:color==='blue'
+        }">Yeni Renk</p>
+    </div>
+
+    
+    <div class="col-md-4">
+        <h4>[ngStyle]</h4>
+        <input type="text" [(ngModel)]="color" />
+         <!--Yazılan renge dönüşsün işlemi-->
+        <p [ngStyle]="{color: color }">Style Renk</p> <!--color variable ına bağladım-->
+        <p [ngStyle]="{color: color ==='Didem' ? 'red' : 'blue' }">Style Yeni Renk</p> <!--if else ile de yapılabilir-->
+    </div>
+</div>
+
+
+
+    <h3>Custom Directives</h3>
+    <!--Custom Directives: Html elementlerimize attribute direvtive gibi custom bir şekilde kendi isteğimiz doğrultusunda hareket etmemizi sağlar
+    elementref leri dinlemek için özellikle custom directive ler kullanılır. -->
+<div class="row">
+    <div class="col-md-6">
+        <p appHighlight>Highlight Directive Works!</p>
+
+        <p appHighlight [highlightColor]="'yellow'">Yellow Custom Directive</p><!--[highlightColor] => değişken -->
+        <p appHighlight highlightColor="orange">Orange Custom Directive</p> <!--highlightColor => string -->
+    </div>
+</div>

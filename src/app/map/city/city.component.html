@@ -1,0 +1,18 @@
+<div style="margin:2rem;">
+    <div class="row">
+        <h3>Şehirler</h3>
+        <div class="col-md-12" *ngIf="citiesData$ | async as cityNameData"> <!--async ile doğrudan html de subscribe olmuş gibi davranıyor -->
+            <!--async ile gelen observable dataya subscribe olup cityNameData burada işlemleri görür-->
+            <ul>
+                <li *ngFor="let city of cityNameData">
+                    {{city.id}} - {{city.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+  <!-- <div class="col-md-12">
+        id: <br/> <input type="number" [(ngModel)]="cityId"><br />
+        new name: <br/> <input type="text" [(ngModel)]="cityName"><br /><br />
+        <button (click)="save()">Kaydet</button>
+    </div>-->
+</div>

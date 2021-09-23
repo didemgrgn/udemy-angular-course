@@ -1,0 +1,51 @@
+<!--Child1Component i child.module.ts de import edildi,
+    index.ts de e export edildi,
+    parents.module.ts ChildModule import edildi artık parentlarda child componenti kullanılabilir-->
+
+    <div style="margin:2rem;">
+        <div class="row">
+            <div class="col-md-3">
+                <!--child componentine bir input value su göndereceğiz  ve child componenti içerisinde bunu render ederek işlemlerde kullanılacak-->
+                İsim: <input type="text" [(ngModel)]="name">
+            </div>
+            <div class="col-md-3">
+                Başarı durumu:
+                <select [(ngModel)]="successStatus">
+                    <option value="0">Seçin</option>
+                    <option [ngValue]="true">Başarılı</option> <!--[ngValue] => data-->
+                    <option [ngValue]="false">Başarısız</option>
+                </select>
+            </div>
+            <div class="col-md-2">    
+                <button style="background-color: rgb(92, 236, 188); color: slateblue;  margin-left: 1px;" (click)="calculate()">Çalıştır</button>
+            </div>
+
+            <div class="col-md-2">    
+                <button style="background-color: rgb(92, 236, 188); color: slateblue;  margin-left: 1px;" (click)="child1.alertSth()">Child Component Trigger</button>
+            </div>
+
+        </div>
+        
+        <!--data-binding olarak sonuç: {{name}} => yansıtabildiğimi göstermek için interpolation data binding e bakılacak-->
+        
+        <div class="row">
+            <div class="col-md-12">
+        <!--child componente name gönderilecek-->
+        <!--child component : 
+        app-child1 [nameVal]="name"></app-child1> => data olarak gönderilecek ise [namVal], string olarak göndereceksem nameVal olarak gönderilir ya da nameVal="'name'", hem data hemde string ise [nameVal]="'name'"-->
+        <!--yukarıda name değişken olarak ele alınmaktadır.-->
+        <!--yukarıdaki {{name}} değiştikçe aktif oldukça nameVal ya name gönderiliyor
+        child1.component.ts inde aldığı input değerini  child1.html  deki interpolation da kullanıyor.
+        <app-child1 [nameVal]="name"> => input value sunu göndererek child componentini parenttan haberdar edilmiş oldu valueları gönderilerek-->
+            
+           <!--1.yöntem--> <!--<app-child1 [data]="calculaterData" (resetForm)="resetParentForm()"></app-child1>--><!--Hepsinin aktif olması isteniyor ancak her çalıştığında değil çalıştır butonuna basıldığında-->
+             <!--resetForm : template de  trigger işlemi için kullanılır buttondaki click gibi = diyerek triggerlanmasını istenilen metot veya işlem gösterilir
+                 child.component.ts deki outputta resetForm a bir akış olduğunda triggerlandığında buradaki resetform alanı anlayarak resetParentForm metoduna gidecek-->
+
+            <!--2.yöntem--><app-child1 [data]="calculaterData" (resetForm)="resetParentForm($event)"></app-child1>
+        </div>
+
+    </div>   
+      
+    </div>
+

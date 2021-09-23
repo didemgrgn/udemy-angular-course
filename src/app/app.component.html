@@ -14,7 +14,9 @@
   </div>
 </div> -->
 
-<app-navbar></app-navbar> <!--hangi route a giderse görünecek-->
+<!--lang yani input olarak translateService in aktif dili gönderiliyor currentLang-->
+<!--output olarak langChange, onSelection ı yakalamak için event yazıldı-->
+<app-navbar [lang]="translateService.currentLang" (langChange)="setLanguage($event);"></app-navbar> <!--hangi route a giderse görünecek-->
 
 <div class="row">
   <div class="col-md-3">

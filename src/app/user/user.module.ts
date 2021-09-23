@@ -6,6 +6,7 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { UserRoleComponent } from './user/user-role/user-role.component';
 import { RouterModule, Routes } from '@angular/router';
 import {IgxButtonModule} from "igniteui-angular";
+import { AuthChildGuard } from 'src/libs/guards/auth-child.guard';
 //Route tanımlıyoruz
 //Routing de okuma yukarıdan aşağı doğru olur
 const routes: Routes =[
@@ -25,13 +26,18 @@ const routes: Routes =[
           path:"role",
           component:UserRoleComponent
         },
+
+        //User a gitsin ama details ve role e gitmesin istenirse bunun kaldırılması lazım
         //Farklı url lerde istek yapılırsa
-        {
-          path:"",
-          redirectTo:"details", //ne olursa olsun detail componentine gitsin
-          pathMatch: "full" //tam eşleşmesi için
-        }
-    ]//usercomponent in childrenları var user-role ve user-details
+        //{
+        //  path:"",
+        //  redirectTo:"details", //ne olursa olsun detail componentine gitsin
+        //  pathMatch: "full" //tam eşleşmesi için
+        //}
+    ],//usercomponent in childrenları var user-role ve user-details
+
+    //user çalışsın userdetail ve role login olunmadıysa gözükmesin
+    canActivateChild:[AuthChildGuard]
   },
   {
 

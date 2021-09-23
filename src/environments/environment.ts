@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,  //prod gibi buraya da eklenir.
+   api: {
+    nestjs: {
+      role:"https://udemy-nestjs-course.herokuapp.com/api" //başlangıç url i yazıldı
+    }
+  }
 };
 
 /*

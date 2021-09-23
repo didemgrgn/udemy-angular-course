@@ -1,13 +1,24 @@
 <!--navbar.component.html-->
 
-<igx-navbar
-     title="Udemy Angular 9 Course" 
-     actionButtonIcon="home" 
-     [isActionButtonVisible]="true"
->
+<igx-navbar title="Udemy Angular 9 Course" actionButtonIcon="menu" [isActionButtonVisible]="true">
+
+    <!--input olarak alınacak değer lang-->
+    <!--onSelection: selection durumu olduğu zaman yeni ve eski seçenekler handle edilebiliyor-->
+    <!--$event.newSelection.value => output a buradaki selection ın yeni value su gönderiliyor-->
+    <!--  <igx-select [value]="lang" (onSelection)="langChange.emit($event.newSelection.value)">-->
+    <igx-select [value]="lang">
+        <igx-select-item value="tr">Türkçe</igx-select-item>
+        <igx-select-item value="en">İngilizce</igx-select-item>
+    </igx-select>
+
 
     <igx-icon>search</igx-icon>
-    <igx-icon>account_circle</igx-icon>
+    <igx-icon (click)="toggleLogin()">account_circle</igx-icon>
+    <!--storage için bu ikona tıklayınca, click event aktif olunca çalışsın-->
     <igx-icon>more_vert</igx-icon>
+
+    <igx-action-icon>
+        <igx-icon class="customIcon" routerLink="home">home</igx-icon>
+    </igx-action-icon>
 
 </igx-navbar>
