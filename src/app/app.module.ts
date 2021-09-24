@@ -104,7 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) { //assets dosyaları kendim
   return new TranslateHttpLoader(
     http,
      "./assets/i18n/",
-      ".json ?cb=" + new Date().getTime()
+      ".json "
+      //?cb=" + new Date().getTime()
       );
 }
 
