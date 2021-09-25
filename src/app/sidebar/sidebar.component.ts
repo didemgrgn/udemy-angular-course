@@ -49,7 +49,11 @@ export class SidebarComponent implements OnInit {
    {
   routerLink: "map",
   name:"Map"
-   }
+   },
+   {
+    routerLink: "file-upload",
+    name:"File-Upload"
+     }
   ]
 
 

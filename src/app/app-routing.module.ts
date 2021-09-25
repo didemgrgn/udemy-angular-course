@@ -44,6 +44,10 @@ const routes: Routes = [
     path:"map",
     loadChildren:()=>import('./map/map.module').then(m=>m.MapModule) 
   },
+  {
+    path:"file-upload",
+    loadChildren:()=>import('./file-upload/file-upload.module').then(m=>m.FileUploadModule) 
+  },
   //{
      //sayfalar arasında geçiş yaparken user/:id gönderildiğinde buradaki id yi parametre olarak alabilmek için 
      //user-detail daki user-detail.component.ts ye gidilir.

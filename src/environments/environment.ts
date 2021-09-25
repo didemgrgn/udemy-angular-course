@@ -2,11 +2,15 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//end pointlerin yönetimini tek bir yerden yapmayı sağlar
 export const environment = {
   production: false,  //prod gibi buraya da eklenir.
    api: {
     nestjs: {
       role:"https://udemy-nestjs-course.herokuapp.com/api" //başlangıç url i yazıldı
+    },
+    fleek: {
+      host:"https://fleek-api.herokuapp.com/api/"
     }
   }
 };

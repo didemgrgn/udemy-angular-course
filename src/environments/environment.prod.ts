@@ -6,6 +6,9 @@ export const environment = {
   api: {
     nestjs: {
       role:"https://udemy-nestjs-course.herokuapp.com/api/" //başlangıç url i yazıldı
+    },
+    fleek: {
+      host:"https://fleek-api.herokuapp.com/api/"
     }
   }
 };

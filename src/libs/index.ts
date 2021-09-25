@@ -32,3 +32,5 @@ export * from "./guards/auth-child.guard"
 export * from "./guards/auth-exit.guard";
 
 export * from "./interceptors/auth.interceptor";
+
+export * from "./services/upload.service";
