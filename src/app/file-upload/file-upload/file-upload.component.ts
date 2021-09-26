@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnyCnameRecord } from 'dns';
 import { UploadService } from 'src/libs';
 
 @Component({
@@ -8,8 +9,8 @@ import { UploadService } from 'src/libs';
 })
 export class FileUploadComponent implements OnInit {
 
-  fileToUpload: File | any =null;
-  images=[];
+  fileToUpload: File | any=null;
+  images=[] as any ;
 
   constructor(private uploadService:UploadService) { }
 
@@ -27,7 +28,7 @@ export class FileUploadComponent implements OnInit {
       this.uploadService.upload(this.fileToUpload).subscribe(
         data => {
          //data gelirse gelen datanın 0.indexsini alsın
-        //HATA ALIYORUM this.images.push(data[0]);
+        this.images.push(data[0]);
       },error=>{
         console.log(error);
       });
