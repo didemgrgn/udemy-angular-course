@@ -2,20 +2,27 @@
 <div class="content-wrap">
   <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
     <ng-template igxDrawer>
-      <nav *ngFor="let routeLink of routeLinks ; let i=index">  
-        <span igxDrawerItem igxRipple routerLink= {{routeLink.routerLink}}> {{routeLink.name}}</span>
-
-        <!-- *Tek tek isim eklemek yerine ngFor ile oluşturulan dizi dönüldü*
+     <!-- <nav *ngFor="let routeLink of routeLinks ; let i=index"> 
+     <span igxDrawerItem igxRipple routerLink= {{routeLink.routerLink}}> {{routeLink.name}}</span>  -->
+    
+        <!-- *Tek tek isim eklemek yerine ngFor ile oluşturulan dizi dönüldü*-->
+         <nav>
         <span igxDrawerItem [isHeader]="true">Sidebar Listesi</span>
         <span igxDrawerItem igxRipple [active]="true" routerLink="home" >Home</span>
         <span igxDrawerItem igxRipple routerLink="role">Role</span>
-        <span igxDrawerItem igxRipple routerLink="user">User</span>   
+          <!--cypress için kullanıcılara attreabute tanımlandı çağırmak için-->
+     <span igxDrawerItem igxRipple routerLink="user"   [attr.data-cy]="'Kullanıcılar'">User</span> 
         <span igxDrawerItem igxRipple routerLink="data-binding">Data Binding</span>
         <span igxDrawerItem igxRipple routerLink="storage">Storage</span>
-        <span igxDrawerItem igxRipple routerLink="directives">Directives</span>-->
+        <span igxDrawerItem igxRipple routerLink="directives">Directives</span>
+        <span igxDrawerItem igxRipple routerLink="pipes">Pipes</span>
+        <span igxDrawerItem igxRipple routerLink="parents">Parents</span>
+        <span igxDrawerItem igxRipple routerLink="forms">Forms</span>
+        <span igxDrawerItem igxRipple routerLink="map">Map</span>
+        <span igxDrawerItem igxRipple routerLink="file-upload">File-Upload</span>
         
-
       </nav>
+    
       
     </ng-template>
   </igx-nav-drawer>

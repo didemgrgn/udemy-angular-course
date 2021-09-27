@@ -5,8 +5,8 @@
     <!--input olarak alınacak değer lang-->
     <!--onSelection: selection durumu olduğu zaman yeni ve eski seçenekler handle edilebiliyor-->
     <!--$event.newSelection.value => output a buradaki selection ın yeni value su gönderiliyor-->
-    <!--  <igx-select [value]="lang" (onSelection)="langChange.emit($event.newSelection.value)">-->
-    <igx-select [value]="lang" >
+     <igx-select [value]="lang" (selectionChanging)='langChange.emit($event.newSelection.value)' >
+   <!-- <igx-select [value]="lang" >-->
         <igx-select-item value="tr">Türkçe</igx-select-item>
         <igx-select-item value="en">İngilizce</igx-select-item>
     </igx-select>

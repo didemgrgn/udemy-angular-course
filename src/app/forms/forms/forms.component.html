@@ -1,1 +1,87 @@
-<p>forms works!</p>
+<!--<div class="container">
+    <h1>(Template Driven) Kayıt Formu</h1>
+    <form (ngSubmit)="save(myform)" #myform="ngForm"> //submit olduğu zaman save metoduna gitmesini istersek,butona submit vererek formun ngSubmit i dinlenir, submit olduğu zaman save metodu çalışacak ve bu formu gönderecek 
+        //bu formun  valuelarını görmek istersek, #myform="ngForm" ile myformun bir angular formu olduğu belirtilir
+        <div class="form-group">
+            <label for="username">İsim</label>
+            <input type="text" class="form-control" id="name" name="username" ngModel required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Yaş</label>
+            <input type="number" class="form-control" id="age" name="age" ngModel> 
+            //name ve ngModel ler yazıldı tetiklemesi için bunlar yazılmazsa sadece formu bütün  event olarak çalıştırır içerisindeki controlleri boş bir form olarak görür
+        </div>
+
+        <button type="submit" class="btn btn-success" >Kayıt Ol</button>
+
+    </form>
+</div>-->
+
+<!--Reactive Form-->
+<div class="row">
+    <h2>Reactive Forms - Register</h2>
+    <div class="col-md-12">
+        <form [formGroup]="registerForm" (ngSubmit)="save(registerForm)">
+            <!--form formgroup tan türetiliyor, formun adı registerform-->
+            <!--registerForm hazır olduğu için #myform yapılmadı-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!--Validators-->
+                    <!--registerform varsa, bunun controllerinden username(varsa) in erroru (varsa) ve bunun required i varsa bu alan gözüksün-->
+                    <p *ngIf="registerForm?.controls?.username?.errors?.required && 
+                    registerForm?.controls?.username?.dirty" style="color:red">
+                        <!--dirty ile başta zorunlu alandır diye gelmesin yazıp sildikten sonra yazı gelsin işlemi yapıldı-->
+                        <!--?.controls.username?.errors?.required"-->
+                        <!--required zorunlu alan demektir.-->
+                        *Bu alan zorunludur!
+                    </p>
+
+                    <!--Custom Validators (BlackListValidator)-->
+                    <p *ngIf="registerForm?.controls?.username?.errors?.blacklist &&
+                    registerForm?.controls?.username?.dirty" style="color: red">
+                        *ğ harfini kullanamazsınız.
+                    </p>
+
+
+                    <!--Custom Validators -part2 (whitespace validators)-->
+                    <p *ngIf="registerForm?.controls?.username?.errors?.whitespace &&
+                     registerForm?.controls?.username?.dirty" style="color: red">
+                        *Boşluk karakterini kullanamazsınız.
+                    </p>
+
+                   
+                     <!--Custom Validators -part2 (whitespace validators)-->
+                     <p *ngIf="registerForm?.controls?.username?.errors?.userNameExist" style="color: red">
+                        *Bu isim daha önce kullanılmıştır.
+                    </p>
+
+                   
+
+
+                    <label>
+                        User Name:
+                        <input type="text" formControlName="username" />
+                    </label>
+                    
+                    <!--Reactive form  ile edit eşitleme (pathvalu)- otomatik user name türetecek-->
+                    <button (click)="randomUsername($event)">UserName Türet</button>
+                </div>
+
+                <div class="col-md-12">
+                    <label>
+                        Ager:
+                        <input type="number" formControlName="age" />
+                    </label>
+                </div>
+                <br />
+
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!registerForm?.valid">Kayıt Ol</button>
+            <!--disabled: ile invalid olduğunda butona tıklanamaması için kullanıldı, false kende disable olsun diye ! konuldu
+            Form valid olduğunda aktif olacak-->
+            <!--save in tetiklenmesi için submit-->
+
+        </form>
+    </div>
+</div>

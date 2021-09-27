@@ -41,6 +41,10 @@ const routes: Routes = [
     loadChildren:()=>import('./parents/parents.module').then(m=>m.ParentsModule) 
   },
   {
+    path:"forms", //forms olarak gelirse
+    loadChildren:()=>import('./forms/forms.module').then(m=>m.AngularFormsModule)
+  },
+  {
     path:"map",
     loadChildren:()=>import('./map/map.module').then(m=>m.MapModule) 
   },

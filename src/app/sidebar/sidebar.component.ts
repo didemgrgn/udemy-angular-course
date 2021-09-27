@@ -9,7 +9,7 @@ export class SidebarComponent implements OnInit {
 
   constructor() { }
 
-  routeLinks=[
+ /* routeLinks=[
     {
        routerLink: "home",
        name:"Home"
@@ -19,8 +19,11 @@ export class SidebarComponent implements OnInit {
       name:"Role"
    },
    {
+   
     routerLink: "user",
-    name:"User"
+    name:"User",
+  
+
    },
    {
   routerLink: "data-binding",
@@ -55,7 +58,7 @@ export class SidebarComponent implements OnInit {
     name:"File-Upload"
      }
   ]
-
+*/
 
   ngOnInit(): void {
   }

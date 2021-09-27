@@ -34,3 +34,9 @@ export * from "./guards/auth-exit.guard";
 export * from "./interceptors/auth.interceptor";
 
 export * from "./services/upload.service";
+
+export * from "./custom-validators/blacklist.validator";
+
+export * from "./custom-validators/no-white-space.validator";
+
+export * from "./custom-validators/user-name-exist.validator";
