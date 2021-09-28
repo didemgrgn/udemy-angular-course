@@ -5,6 +5,7 @@ import { Parent2Component } from './parent2/parent2.component';
 import { ChildModule } from 'src/libs';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { IgxButtonModule } from 'igniteui-angular';
 
 const routes: Routes =[
   {
@@ -37,7 +38,8 @@ const routes: Routes =[
     CommonModule,
     ChildModule, //Child modülü eklendi
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    IgxButtonModule
   ]
 })
 export class ParentsModule { }

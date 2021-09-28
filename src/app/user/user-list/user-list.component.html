@@ -12,18 +12,18 @@
 </ul>-->
 
 <!--Karma-Jasmine ile Unit test-->
-<h1>Kullanıcı Listesi</h1>
+<h1 style="margin-top: 20px; color:turquoise" >Kullanıcı Listesi</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <button class="add-button" (click)="addRandomUser();">Rastgele Kullanıcı Ekle</button>
+        <button class="add-button" (click)="addRandomUser();" gxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">Rastgele Kullanıcı Ekle</button>
     </div>
     <div class="col-md-6">
         <ul *ngIf="users.length>0" class="user-list">
-            <li class="user-list-item" *ngFor="let user of users"> <!--oluşturduğum kullanıcılara listeleyeceğim-->
+            <li class="user-list-item" *ngFor="let user of users" style="color: rgb(166, 71, 230);"> <!--oluşturduğum kullanıcılara listeleyeceğim-->
                 {{user.name}}
             </li>
         </ul>
-        <h3 *ngIf="users.length==0">Kullanıcı Listesi Boş</h3> <!--Hiç eklenmemiş hali olduğu zaman bu gözüksün-->
+        <h3 *ngIf="users.length==0" style="font-size:medium; color: rgb(96, 9, 122); ">Kullanıcı Listesi Boş</h3> <!--Hiç eklenmemiş hali olduğu zaman bu gözüksün-->
     </div>
 </div>

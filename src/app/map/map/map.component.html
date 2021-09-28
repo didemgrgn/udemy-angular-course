@@ -1,26 +1,26 @@
 <div class="row" style="margin: 2rem">
-    <div class="col-md-9 offset-md-4">
+    <div class="col-md-9">
         <form class="form-group" #cityForm="ngForm" (ngSubmit)="save(cityForm)">
             <div class="row">
                 <div class="col-md-12 form-control">
-                    <label for="id">Id</label>
+                    <label for="id" style="color: rgb(96, 9, 122);">Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     <input type="number" name="id" ngModel>
-                </div>
+                </div><br><br>
                 <div class="col-md-12">
-                    <label for="name">Name</label>
+                    <label for="name" style="color: rgb(96, 9, 122);">Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     <input type="text" name="name" ngModel>
-                </div>
+                </div><br><br>
                 <div class="col-md-12">
-                    <label for="region">Region</label>
+                    <label for="region" style="color: rgb(96, 9, 122);">Region:&nbsp;&nbsp; </label>
                     <input type="text" name="region" ngModel>
-                </div>
+                </div><br><br>
                 <div class="col-md-12">
-                    <label for="plaka">Plaka</label>
+                    <label for="plaka" style="color: rgb(96, 9, 122);">Plaka:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
                     <input type="number" name="plaka" ngModel>
                 </div><br/>
                 
-            </div>
-            <button type="submit">Kaydet</button>
+            </div><br/>
+            <button type="submit" igxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">Kaydet</button>
         </form>
     </div>
     <div class="col-md-4">

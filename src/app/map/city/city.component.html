@@ -1,10 +1,10 @@
 <div style="margin:2rem;">
     <div class="row">
-        <h3>Şehirler</h3>
+        <h3 style="color: rgb(96, 9, 122);">Şehirler</h3>
         <div class="col-md-12" *ngIf="citiesData$ | async as cityNameData"> <!--async ile doğrudan html de subscribe olmuş gibi davranıyor -->
             <!--async ile gelen observable dataya subscribe olup cityNameData burada işlemleri görür-->
             <ul>
-                <li *ngFor="let city of cityNameData">
+                <li *ngFor="let city of cityNameData" style="color: rgb(96, 9, 122);">
                     {{city.id}} - {{city.name}}
                 </li>
             </ul>

@@ -2,28 +2,30 @@
 <div class="content-wrap">
   <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
     <ng-template igxDrawer>
-     <!-- <nav *ngFor="let routeLink of routeLinks ; let i=index"> 
+      <!-- <nav *ngFor="let routeLink of routeLinks ; let i=index"> 
      <span igxDrawerItem igxRipple routerLink= {{routeLink.routerLink}}> {{routeLink.name}}</span>  -->
-    
-        <!-- *Tek tek isim eklemek yerine ngFor ile oluşturulan dizi dönüldü*-->
-         <nav>
-        <span igxDrawerItem [isHeader]="true">Sidebar Listesi</span>
-        <span igxDrawerItem igxRipple [active]="true" routerLink="home" >Home</span>
-        <span igxDrawerItem igxRipple routerLink="role">Role</span>
-          <!--cypress için kullanıcılara attreabute tanımlandı çağırmak için-->
-     <span igxDrawerItem igxRipple routerLink="user"   [attr.data-cy]="'Kullanıcılar'">User</span> 
-        <span igxDrawerItem igxRipple routerLink="data-binding">Data Binding</span>
-        <span igxDrawerItem igxRipple routerLink="storage">Storage</span>
-        <span igxDrawerItem igxRipple routerLink="directives">Directives</span>
-        <span igxDrawerItem igxRipple routerLink="pipes">Pipes</span>
-        <span igxDrawerItem igxRipple routerLink="parents">Parents</span>
-        <span igxDrawerItem igxRipple routerLink="forms">Forms</span>
-        <span igxDrawerItem igxRipple routerLink="map">Map</span>
-        <span igxDrawerItem igxRipple routerLink="file-upload">File-Upload</span>
-        
+
+      <!-- *Tek tek isim eklemek yerine ngFor ile oluşturulan dizi dönüldü*-->
+      <nav>
+        <span igxDrawerItem style="color:rgb(182, 71, 233); background-color: rgb(239, 218, 247);"
+          [isHeader]="true"><b>Sidebar Listesi</b></span>
+        <span igxDrawerItem igxRipple [active]="true" routerLink="home" style="color:rgb(115, 9, 177);">Home</span>
+        <span igxDrawerItem igxRipple routerLink="role" style="color:rgb(115, 9, 177);">Role</span>
+        <!--cypress için kullanıcılara attreabute tanımlandı çağırmak için-->
+        <span igxDrawerItem igxRipple routerLink="user" style="color:rgb(115, 9, 177);"
+          [attr.data-cy]="'Kullanıcılar'">User</span>
+        <span igxDrawerItem igxRipple routerLink="data-binding" style="color:rgb(115, 9, 177);">Data Binding</span>
+        <span igxDrawerItem igxRipple routerLink="storage" style="color:rgb(115, 9, 177);">Storage</span>
+        <span igxDrawerItem igxRipple routerLink="directives" style="color:rgb(115, 9, 177);">Directives</span>
+        <span igxDrawerItem igxRipple routerLink="pipes" style="color:rgb(115, 9, 177);">Pipes</span>
+        <span igxDrawerItem igxRipple routerLink="parents" style="color:rgb(115, 9, 177);">Parents</span>
+        <span igxDrawerItem igxRipple routerLink="forms" style="color:rgb(115, 9, 177);">Forms</span>
+        <span igxDrawerItem igxRipple routerLink="map" style="color:rgb(115, 9, 177);">Map</span>
+        <span igxDrawerItem igxRipple routerLink="file-upload" style="color:rgb(115, 9, 177);">File-Upload</span>
+
       </nav>
-    
-      
+
+
     </ng-template>
   </igx-nav-drawer>
   <main>

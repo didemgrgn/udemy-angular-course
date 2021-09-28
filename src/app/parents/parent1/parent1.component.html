@@ -17,11 +17,11 @@
                 </select>
             </div>
             <div class="col-md-2">    
-                <button style="background-color: rgb(92, 236, 188); color: slateblue;  margin-left: 1px;" (click)="calculate()">Çalıştır</button>
+                <button style="background-color: #DCEDC8; color: slateblue;  margin-left: 1px;" (click)="calculate()">Çalıştır</button>
             </div>
 
             <div class="col-md-2">    
-                <button style="background-color: rgb(92, 236, 188); color: slateblue;  margin-left: 1px;" (click)="child1.alertSth()">Child Component Trigger</button>
+                <button style="background-color: #DCEDC8; color: slateblue;  margin-left: 1px;" (click)="child1.alertSth()">Child Component Trigger</button>
             </div>
 
         </div>
@@ -42,7 +42,7 @@
              <!--resetForm : template de  trigger işlemi için kullanılır buttondaki click gibi = diyerek triggerlanmasını istenilen metot veya işlem gösterilir
                  child.component.ts deki outputta resetForm a bir akış olduğunda triggerlandığında buradaki resetform alanı anlayarak resetParentForm metoduna gidecek-->
 
-            <!--2.yöntem--><app-child1 [data]="calculaterData" (resetForm)="resetParentForm($event)"></app-child1>
+            <!--2.yöntem--><app-child1 [data]="calculaterData" (resetForm)="resetParentForm($event)" ></app-child1>
         </div>
 
     </div>   

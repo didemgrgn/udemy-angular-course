@@ -7,6 +7,7 @@ import { UserRoleComponent } from './user/user-role/user-role.component';
 import { RouterModule, Routes } from '@angular/router';
 import {IgxButtonModule} from "igniteui-angular";
 import { AuthChildGuard } from 'src/libs/guards/auth-child.guard';
+
 //Route tanımlıyoruz
 //Routing de okuma yukarıdan aşağı doğru olur
 const routes: Routes =[

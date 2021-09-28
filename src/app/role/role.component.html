@@ -1,21 +1,23 @@
 <div class="row">
-    <div class="col-md-9 offset-md-3">
+    <!--<div class="col-md-9 offset-md-3">-->
+        <div class="col-md-9" style="margin-top: 20px;">
         <form #roleForm="ngForm" class="form-group" (ngSubmit)="addNewRole(roleForm)">
 
-            <label for="id">id</label><br>
+            <label for="id" style="color: rgb(96, 9, 122);"><b>Id :</b></label><br>
             <input class="form-control" type="text" name="id" ngModel/><br>
-
+            <br>
             <!--ngSubmit: addnewrole e gidecek ve roleformu gönderecek servise gidip isteği gerçekleştirecek-->
-            <label for="name">name</label><br>
+            <label for="name" style="color: rgb(96, 9, 122);"><b>Name :</b></label><br>
             <input class="form-control" type="text" name="name"  ngModel/><br><br>
             <!--ngModel: formu tetiklesin-->
 
-            <button type="submit">Kaydet</button><br><br>
-            
+            <button type="submit"  igxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">Kaydet</button><br><br>
+           
+
         </form>
-        <button (click)="editRole(roleForm)">Düzenle</button> <br>
-            <!--editNewRole e gidecek oraya da roleform u gönderecek-->
-        <button (click)="deleteRole(roleForm)">Sil</button>
+        <button (click)="editRole(roleForm)"  igxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">Düzenle</button> <br>
+        <br>    <!--editNewRole e gidecek oraya da roleform u gönderecek-->
+        <button (click)="deleteRole(roleForm)"  igxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">Sil</button><br><br><br>
     </div>
 </div>
 

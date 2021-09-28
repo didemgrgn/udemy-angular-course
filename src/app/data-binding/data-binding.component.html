@@ -1,18 +1,18 @@
-<p>data-binding works!</p>
+
 <!--Angular da data binding 2 kısım olarak ayrılmaktadır
 Tek Yönlü(one way) ve İki Yönlü(two way) olarak 
 Tek Yönle data bingding : ikiye ayrılır html den type script katmanına ya da type scriptten html katmanına
 component to dom veya dom to component denilir kavram olarak-->
 
-<div class="row">
+<div class="row" style="margin-top: 20px;">
     <div class="col-md-12">
-         <h2>One Way Binding <span style="font-size: 0.9rem;"> from Component to Dom</span></h2>
+         <h2 style="color: rgb(54, 7, 82);">One Way Binding <span style="font-size: 0.9rem;"> from Component to Dom</span></h2>
          <div class="row">
              <div class="col-md-2">
-                 <h3>Interpolation</h3>
+                 <h3 style="color: rgb(129, 30, 168);">Interpolation</h3>
                  <!--Interpolation: Objelerdeki(data-binding.component.ts de bulunan user) datayı html e aktarma imkanı sağlar-->
-                 <p> Ad : {{user.name}}, Soyad : {{user.surname}}  </p>
-                 <p> Hesaplama : {{1+2}}</p>
+                 <p style="color: rgb(110, 57, 110);"> Ad : {{user.name}} , Soyad : {{user.surname}}  </p>
+                 <p style="color: rgb(110, 57, 110);"> Hesaplama : {{1+2}}</p>
                  <div>
                      <img 
                      height="120px" 
@@ -21,13 +21,13 @@ component to dom veya dom to component denilir kavram olarak-->
                  </div>
              </div>
              <div class="col-md-3">
-                 <h3>Property Binding</h3>
+                 <h3 style="color: rgb(129, 30, 168);"> Property Binding</h3>
                  <!--Property Binding: Html taglerimizin değelerini component ten gönderebilmeye yarar.
                 [value] - köşeli paratez bu propertye data göndereceğim anlamına gelir-->
                  <input [type]="type" [value]="user.job">
              </div>
              <div class="col-md-3">
-                   <h3>Attribute Binding</h3>
+                   <h3 style="color: rgb(129, 30, 168);">Attribute Binding</h3>
                    <!--Attribute Binding: Angular one way binding de componentten dom a componentin attribute ünü değiştirebilecek değeler verebilir
                    Sabit değerler vermek yerine değişkenlerle yönetim imkanı sağlıyor -->
                    <input 
@@ -37,7 +37,7 @@ component to dom veya dom to component denilir kavram olarak-->
                    <!--attr.disabled="disabled"(sabit değer) yazılsaydı değişme durumunda bunu tetikleyemezdi bu sebeple buraya koşul koyuldu-->
              </div>
              <div class="col-md-2">
-                 <h3>Class Binding</h3>
+                 <h3 style="color: rgb(129, 30, 168);">Class Binding</h3>
                  <!--Class Binding: Angular componentin class ındaki değerin olup olmamasına karar verebiliyor, type script üzerinden-->
                  <!--<p class="red"> Renk Değeri!!</p>-->
                  <!--Kullanıcının ismi Didem se kırmızı değilse default rengi neyse o olacak -->
@@ -46,7 +46,7 @@ component to dom veya dom to component denilir kavram olarak-->
                  <p [class.red]="user.name=='Didem' ? true : false">Renk Değeri</p>
              </div>
              <div class="col-md-2">
-                 <h3>Style Binding</h3>
+                 <h3 style="color: rgb(129, 30, 168);">Style Binding</h3>
                  <!--Style Binding: stillerde de koşula göre işlem yapılması sağlanmaktadır.-->
                  <!--<p style="color : blue" >Style Color</p> -->
                  <!--Bir değere göre değişmesi için:-->
@@ -56,28 +56,28 @@ component to dom veya dom to component denilir kavram olarak-->
     </div>
 
     <div class="col-md-12">
-        <h2>
+        <h2 style="color: rgb(129, 30, 168); font-size: 22px;">
             One Way Binding
             <span style="font-size: 0.9rem;">from DOM to Component</span>
         </h2>
         <div class="row">
             <div class="col-md-2">
-                <h3>Event Binding</h3>
+                <h3 style="color: rgb(129, 30, 168);">Event Binding</h3>
                 <!--Event Binding: Vereceğimiz component ten oluşacak eventi angular component in type script dosyasına haberdar edilmesi gerekiyor.
                 Componentteki html deki her componentin bir eventi var ve o event ile component teki bir metod veya işlem tetiklenebiliyor.-->
-                <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event)"> <!--($event) //Tetiklenen componentin eventini gönderecek-->
-                <button (click)="buttonClicked();">OK!</button>
+                <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event)"> <!--($event) //Tetiklenen componentin eventini gönderecek--><br><br>
+                <button (click)="buttonClicked();" igxButton="raised" igxRipple igxButtonBackground="#DCEDC8" style="color: rgb(96, 9, 122);">OK!</button><br><br>
             </div>
          </div>
     </div>
 <!--Two Way Binding: Hem dom dan hem componentten birbirleri arasında anlık iletişim kurabilmesini sağlar.-->
 <div class="col-md-12">
-    <h2>
-        Two Way bingding
+    <h2 style="color: rgb(129, 30, 168); font-size: 22px;">
+        Two Way Bingding
     </h2>
     <div class="row">
         <div class="col-md-2">
-            <h3>ngModel</h3>
+            <h3 style="color: rgb(113, 146, 218); font-size: 22px;">ngModel</h3>
             <!--ngModel: Componentteki(data-binding.component.ts) değeri html deki componentin value suna eşitleyip iletişim kurdurabiliyor.
             input içerisinde yazan Didem adını sildiğimde her yerden silmiş oluyorum, tüm değerler anlık olarak değişiyor
             ngModel ile bütün property ler değişiyor, istenilen bir değeri hem componentte hem domda değiştirip diğer yerler tetiklenebilir,
